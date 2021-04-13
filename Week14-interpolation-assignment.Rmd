@@ -1,0 +1,77 @@
+---
+title: "Interpolation_answers"
+author: "YOUR NAME HERE"
+output: html_document
+---
+
+# Set up
+
+Load the following packages:
+
+```{r message=F, warning=F}
+# read in necessary packages
+library(sf)
+library(sp)
+library(gstat)
+library(tidyverse)
+```
+
+...and the `CA_precip_sf.RDS` file and the `coterm_cty_sf.RDS` file that stores the county information for California:
+
+```{r}
+p <- readRDS("./data/")
+ctys <- readRDS("./data/")
+
+# transform ctys so that it is the same projection as p `CRS("+proj=aea +lat_1=34 +lat_2=40.5 +lat_0=0 +lon_0=-120 +x_0=0 +y_0=-4000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs")`
+ca <- st_transform(, st_crs())
+
+# select for only California, STATEFP == 06
+ca <- ctys %>% filter()
+```
+
+# Q1
+
+* Use `ggplot()` to visualize precipitation in August.  Note that to do this, you will interface with `tidyverse` and `ggplot` as I did in the exercise. 
+
+```{r}
+
+```
+
+# Q2
+
+Perform Inverse Distance Weighting interpolation on your August precipitation data using a grid with `n = 10000` cells.  As you build your grid from the `coterm_cty_sf.RDS` file, be sure to reproject the data so that it matches p, and the CRS used in the exercise:
+
+```{r}
+
+```
+
+# Q3
+
+Create a sample variogram for the `AUG` attribute of the precipitation data.  Assume you are *not* worried about outlier observations.
+
+```{r}
+
+
+```
+
+# Q4
+
+Fit a model variogram to your data.  Justify your choice.
+
+```{r}
+
+```
+
+# Q5
+
+Krige your data using your model variogram.
+
+```{r}
+
+
+```
+
+
+
+
+

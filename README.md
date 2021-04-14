@@ -8,7 +8,7 @@ If you are participating in the lecture, I suggest you follow along with my [Exe
 ## Outline
 1. What is spatial interpolation?
 2. Useful functions to know for predicting data surfaces from sample points
-3. IDW & krigin techniues
+3. IDW & kriging techniques
 
 ## Data source
 All [data](https://github.com/blschum/Spatial-Interpolation-GuestLecture/blob/main/data/CA_precip_sf.RDS) is from the RSpatial text.
